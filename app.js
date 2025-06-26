@@ -55,8 +55,27 @@ const generateDiet = async(userResponses) => {
     };
 
     // Hacer petición a LLM de OpenAI
+    try {
 
-    // Devolvemos el resultado generado
+        const completion= await openai.chat.completions.create({
+            model: "gpt-3.5-turbo",
+            messages: [
+                promptSystem,
+                promptUser
+            ],
+            max_tokens: 1000,
+            temperature: 0.75
+        });
+
+        // Devolvemos el resultado generado
+        const response = completion.choices[0].message.content.trim();
+
+        return response;
+
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({error: "Error al generar la dieta"});
+    }
 }
 
 // Guardo temporalmente los datos del usuario (objeto de almacenamiento temporal de respuestas del usuario)
