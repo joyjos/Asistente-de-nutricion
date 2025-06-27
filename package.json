@@ -1,14 +1,14 @@
 {
-  "name": "01-traducciones-openai",
+  "name": "04-dietas-openai",
   "version": "1.0.0",
-  "description": "Proyecto de traducciones usando JavaScript y el API de OpenAI",
-  "homepage": "https://github.com/joyjos/Chat-de-Traducciones#readme",
+  "description": "Proyecto de Asistente de nutrición semanal usando JavaScript y el API de OpenAI",
+  "homepage": "https://github.com/joyjos/Asistente-de-nutricions#readme",
   "bugs": {
-    "url": "https://github.com/joyjos/Chat-de-Traducciones/issues"
+    "url": "https://github.com/joyjos/Asistente-de-nutricion/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joyjos/Chat-de-Traducciones.git"
+    "url": "git+https://github.com/joyjos/Asistente-de-nutricion.git"
   },
   "license": "MIT",
   "author": "Jose G. Palacio",
