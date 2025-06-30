@@ -36,6 +36,10 @@ const generateDiet = async(userResponses) => {
                   
                   El sistema no responderá a ningún otro tipo de solicitud que no esté
                   relacionada con la dieta.
+
+                  Si el usuario no te manda alguno de los datos,
+                  interprétalo tu mismo (por ejemplo, si el usuario no me pasa el peso,
+                  pero si me pasa la altura, usa un peso que sea más o menos probable)
                   `
     };
 
@@ -129,8 +133,6 @@ app.post("/api/nutri-chat", async(req, res) => {
 
     if(!userData[userId].comidas_diarias){
         userData[userId].comidas_diarias = userMessage;
-
-        return res.json({reply: "Cuántas comidas quieres hacer cada día?"})
 
         // Ejecutar la petición a al IA con un prompt
         const diet = await generateDiet(userData[userId]);
