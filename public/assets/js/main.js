@@ -54,14 +54,23 @@ async function sendMessage(){
     const lastBotMsg = botMessages[botMessages.length - 1];
 
     if(lastBotMsg){
-        lastBotMsg.textContent = data.reply;
+
+        // Formatear la tabla
+        if(data.reply.length >= 100){
+            const md = new markdownit();
+
+            const htmlContent = md.render(data.reply);
+
+            lastBotMsg.innerHTML = htmlContent ;
+        }else{
+            lastBotMsg.textContent = data.reply;
+        }
+
         chatBox.scrollTop = chatBox.scrollHeight;
     }else{
         displayMessage(data.reply, "bot");
     }
 
-    // Formatear resultado
-    
 }
 
 resButton.addEventListener("click", sendMessage);
